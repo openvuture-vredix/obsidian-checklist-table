@@ -1,0 +1,10 @@
+{
+	"id": "checklist-table",
+	"name": "Checklist Table",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Create beautiful checklist tables with customizable columns",
+	"author": "Vredix",
+	"authorUrl": "https://github.com/openvuture-vredix",
+	"isDesktopOnly": false
+}
