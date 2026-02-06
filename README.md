@@ -1,3 +1,9 @@
+![](assets/logo.png)
+
+<br>
+<br>
+
+
 # Checklist Table
 
 A powerful Obsidian plugin that transforms simple markdown into beautiful, interactive checklist tables with customizable columns, progress tracking, and multiple task states.
@@ -51,6 +57,9 @@ A powerful Obsidian plugin that transforms simple markdown into beautiful, inter
 Create a checklist table using a code block with the `checklist` language identifier:
 (The first line, which starts with a | gets rendered as the Header)
 
+![](assets/progress-bar-and-button.png)
+
+
 ````markdown
 ```checklist
 
@@ -67,6 +76,8 @@ Create a checklist table using a code block with the `checklist` language identi
 
 Change task states by right-clicking on a checkbox:
 
+![](assets/multiple-states-with-context-menu.png)
+
 - `[ ]` - Open task (empty checkbox)
 - `[x]` - Completed task (✓)
 - `[-]` - Cancelled task (−)
@@ -76,7 +87,9 @@ Change task states by right-clicking on a checkbox:
 
 ### Multiple Columns
 
-Add as many columns as you need:
+Add as many columns and headings as you need:
+
+![](assets/unlimited-headings.png)
 
 ````markdown
 ```checklist
@@ -93,10 +106,13 @@ Add as many columns as you need:
 ### Adding Tasks
 
 Hover over the table to reveal the **+** button, which allows you to add new tasks without editing the markdown directly.
+(Can be changed to permanently visible in the plugin settings)
 
 ### Sections with Separators
 
 Use `---` to create visual separators between task groups:
+
+![](assets/separator-line.png)
 
 ````markdown
 ```checklist
@@ -114,6 +130,8 @@ Use `---` to create visual separators between task groups:
 ### Links and Formatting
 
 Use standard Obsidian markdown syntax within cells:
+
+![](assets/linked-notes.png)
 
 ````markdown
 ```checklist
