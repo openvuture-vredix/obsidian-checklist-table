@@ -1,0 +1,499 @@
+/* ============================================================================
+   TABLE CONTAINER
+   ============================================================================ */
+
+.checklist-table-container
+{
+    margin: 1em 0;
+    overflow-x: auto;
+}
+
+
+/* ============================================================================
+   TABLE BASE
+   ============================================================================ */
+
+.checklist-table
+{
+    min-width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: var(--font-text-size);
+    table-layout: auto;
+}
+
+
+/* ============================================================================
+   HEADER STYLING
+   ============================================================================ */
+
+.checklist-table thead th
+{
+    min-height: 30px;
+    background-color: var(--background-secondary);
+    border-bottom: 2px solid var(--background-modifier-border);
+    padding: 14px 20px 14px 20px !important;
+    text-align: left;
+    font-weight: 600;
+    font-size: clamp(14px, 1.2rem, 18px);
+    text-transform: uppercase;
+    color: var(--text-accent);
+}
+
+.checklist-table thead th
+{
+    pointer-events: none;
+}
+
+.checklist-header-checkbox
+{
+    width: 40px;
+    text-align: center !important;
+}
+
+.checklist-table thead tr
+{
+    background-color: var(--background-secondary);
+}
+
+
+/* ============================================================================
+   ROW STYLING
+   ============================================================================ */
+
+.checklist-table tbody tr
+{
+    border-bottom: 1px solid var(--background-modifier-border);
+    border-top: 1px solid var(--background-modifier-border);
+    transition: background-color 0.15s ease;
+}
+
+.checklist-table tbody tr:last-child
+{
+    border-bottom: none;
+}
+
+
+/* ============================================================================
+   CELL STYLING
+   ============================================================================ */
+
+.checklist-table tbody td
+{
+    padding: 14px !important;
+    vertical-align: middle;
+    height: 30px;
+    background-color: color-mix(in srgb, var(--background-secondary) 40%, transparent);
+}
+
+.checklist-cell-content
+{
+    display: inline;
+}
+
+.checklist-cell-content p
+{
+    margin: 0;
+    display: inline;
+}
+
+.checklist-cell-bold,
+.checklist-cell-bold p,
+.checklist-cell-bold strong
+{
+    font-weight: 500;
+}
+
+
+/* ============================================================================
+   LINKS IN CELLS
+   ============================================================================ */
+
+.checklist-table td a
+{
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.checklist-table td a:hover
+{
+    color: var(--link-color-hover);
+    text-decoration: underline;
+}
+
+.checklist-table td .internal-link
+{
+    color: var(--link-color);
+}
+
+.checklist-table td .external-link
+{
+    color: var(--link-external-color);
+}
+
+
+/* ============================================================================
+   CHECKBOXEN
+   ============================================================================ */
+
+.checklist-checkbox-cell
+{
+    width: 40px;
+    text-align: center;
+    padding: 8px;
+}
+
+/* Explizit Hintergrundfarbe für Checkbox-Zelle setzen */
+.checklist-table tbody td.checklist-checkbox-cell
+{
+    background-color: color-mix(in srgb, var(--background-secondary) 40%, transparent);
+}
+
+.checklist-checkbox
+{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin: 0 auto;
+    border: 2px solid var(--text-muted);
+    border-radius: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.checklist-checkbox:hover
+{
+    border-color: var(--interactive-accent);
+}
+
+/* Status: Erledigt */
+.checklist-checkbox.status-done
+{
+    background-color: var(--interactive-accent);
+    border-color: var(--interactive-accent);
+    color: white;
+}
+
+/* Status: Abgebrochen */
+.checklist-checkbox.status-cancelled
+{
+    background-color: var(--text-muted);
+    border-color: var(--text-muted);
+    color: white;
+}
+
+/* Status: Wichtig */
+.checklist-checkbox.status-important
+{
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    color: white;
+}
+
+/* Status: Verschoben */
+.checklist-checkbox.status-forwarded
+{
+    background-color: #3498db;
+    border-color: #3498db;
+    color: white;
+}
+
+/* Status: Zurückgestellt */
+.checklist-checkbox.status-scheduled
+{
+    background-color: #f39c12;
+    border-color: #f39c12;
+    color: white;
+}
+
+
+/* ============================================================================
+   SPALTEN-LAYOUT
+   ============================================================================ */
+
+/* Checkbox-Spalte: Feste Breite */
+.checklist-table td:nth-child(1),
+.checklist-table th:nth-child(1)
+{
+    width: 60px;
+    max-width: 60px;
+    min-width: 60px;
+}
+
+/* Mittlere Spalten: Dynamisch an Inhalt angepasst */
+.checklist-table td:not(:first-child):not(:last-child),
+.checklist-table th:not(:first-child):not(:last-child)
+{
+    width: 1px;
+    white-space: nowrap;
+    padding-right: 20px;
+}
+
+/* Hintergrundfarbe für mittlere Spalten explizit setzen */
+.checklist-table tbody td:not(:first-child):not(:last-child)
+{
+    background-color: color-mix(in srgb, var(--background-secondary) 40%, transparent);
+}
+
+/* Letzte Spalte: Nimmt restlichen Platz */
+.checklist-table td:last-child,
+.checklist-table th:last-child
+{
+    width: auto;
+    white-space: nowrap;
+}
+
+/* Hintergrundfarbe für letzte Spalte explizit setzen */
+.checklist-table tbody td:last-child
+{
+    background-color: color-mix(in srgb, var(--background-secondary) 40%, transparent) !important;
+}
+
+
+/* ============================================================================
+   RECHTSKLICK-MENÜ
+   ============================================================================ */
+
+.checklist-context-menu
+{
+    background-color: var(--background-primary);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 4px;
+    z-index: 1000;
+    min-width: 180px;
+}
+
+.checklist-menu-item
+{
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.1s ease;
+}
+
+.checklist-menu-item:hover
+{
+    background-color: var(--background-modifier-hover);
+}
+
+.checklist-menu-icon
+{
+    width: 24px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.checklist-menu-label
+{
+    font-size: 14px;
+    color: var(--text-normal);
+}
+
+
+/* ============================================================================
+   FORTSCHRITTSBALKEN
+   ============================================================================ */
+
+.checklist-progress-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 12px;
+    width: 100%;
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    overflow: hidden;
+    transition: opacity 0.2s ease, max-height 0.2s ease, margin 0.2s ease;
+}
+
+/* Progress Bar beim Hover sichtbar */
+.checklist-table-container:hover .checklist-progress-container
+{
+    opacity: 1;
+    max-height: 100px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+/* Immer sichtbar, wenn Setting aktiviert */
+.checklist-always-show-controls .checklist-progress-container
+{
+    opacity: 1;
+    max-height: 100px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.checklist-progress-bar
+{
+    flex: 1;
+    height: 8px;
+    max-width: 34%;
+    background-color: var(--background-modifier-border);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.checklist-progress-fill
+{
+    height: 100%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.checklist-progress-counter
+{
+    font-size: 18px;
+    font-weight: 200;
+    color: var(--text-normal);
+    min-width: 50px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+
+/* ============================================================================
+   BUTTON "NEUE AUFGABE"
+   ============================================================================ */
+
+.checklist-add-button
+{
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.checklist-add-button:hover
+{
+    background-color: var(--interactive-accent-hover);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.checklist-add-button:active
+{
+    transform: scale(1);
+}
+
+
+/* ============================================================================
+   EDITIERBARE ZEILE (beim Hinzufügen neuer Aufgaben)
+   ============================================================================ */
+
+.checklist-editing-row
+{
+    background-color: var(--background-secondary-alt);
+}
+
+.checklist-input-field
+{
+    width: 100%;
+    padding: 8px;
+    background-color: var(--background-primary);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    color: var(--text-normal);
+    font-size: var(--font-text-size);
+    transition: border-color 0.2s ease;
+}
+
+.checklist-input-field:focus
+{
+    outline: none;
+    border-color: var(--interactive-accent);
+}
+
+.checklist-save-button
+{
+    margin-left: 8px;
+    padding: 6px 12px;
+    background-color: var(--interactive-success);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.checklist-save-button:hover
+{
+    background-color: var(--interactive-success);
+    filter: brightness(1.1);
+}
+
+
+/* ============================================================================
+   SEPARATOR (---)
+   ============================================================================ */
+
+.checklist-separator-row
+{
+    background-color: transparent !important;
+    border: none;
+}
+
+.checklist-separator-row:hover
+{
+    background-color: transparent !important;
+}
+
+/* Höhere Spezifität, um Hintergrundfarbe zu überschreiben */
+.checklist-table tbody td.checklist-separator-cell
+{
+    padding: 10px 0 !important;
+    background-color: transparent !important;
+}
+
+.checklist-separator-line
+{
+    margin: 0;
+    border: none;
+    border-top: 2px solid var(--background-modifier-border);
+    opacity: 0;
+}
+
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 768px)
+{
+    .checklist-table
+    {
+        font-size: 0.9em;
+    }
+
+    .checklist-table td,
+    .checklist-table th
+    {
+        padding: 8px;
+    }
+}
