@@ -1,6 +1,11 @@
 ![](assets/logo.png)
 
 <br>
+
+<p align="center">
+  <img src="assets/preview.gif" alt="Plugin Demo" width="800">
+</p>
+
 <br>
 
 
